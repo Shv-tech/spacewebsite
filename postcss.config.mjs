@@ -1,6 +1,6 @@
-// postcss.config.mjs
-import tailwind from '@tailwindcss/postcss'
-
+// postcss.config.mjs  ✅ Tailwind v4 shape
 export default {
-  plugins: [tailwind],
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
 }
