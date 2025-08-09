@@ -1,0 +1,66 @@
+/* If you are not using Tailwind CSS, remove these lines. 
+   If you are using Tailwind, make sure your build process includes Tailwind's PostCSS plugin. */
+
+:root {
+  --bg: #0B0B12;
+  --fg: #F4F4F7;
+  --accent-1: #FF4ECD;
+  --accent-2: #A855F7;
+  --accent-3: #7C3AED;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--fg); }
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Utility buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: var(--accent-2);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  transition: opacity 0.2s;
+  outline: none;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-1);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  background: transparent;
+  transition: background 0.2s;
+  outline: none;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-1);
+}
