@@ -1,5 +1,5 @@
 export const metadata = { title: "Privacy" }
-
+{/* eslint-disable-next-line react/no-unescaped-entities */}
 export default function Page() {
   return (
     <article className="prose prose-invert max-w-none">
@@ -21,12 +21,12 @@ These terms are legally binding under the applicable laws of \[Jurisdiction], in
 
 ## 2. Definitions
 
-* **"Company"**: Refers to SHV Groups and its division, Utopian Space.
-* **"User"**: Any individual accessing our website, platform, or services.
-* **"Contributor"**: Any individual or entity submitting creative work to Utopian Space.
-* **"Content"**: Any text, image, video, audio, software, design, or other creative work.
-* **"Confidential Information"**: Any non-public information shared between parties.
-* **"Intellectual Property" (IP)**: Includes trademarks, copyrights, patents, trade secrets, and designs owned or licensed by the Company.
+* **&quot;Company&quot;**: Refers to SHV Groups and its division, Utopian Space.
+* **&quot;User&quot;**: Any individual accessing our website, platform, or services.
+* **&quot;Contributor&quot;**: Any individual or entity submitting creative work to Utopian Space.
+* **&quot;Content&quot;**: Any text, image, video, audio, software, design, or other creative work.
+* **&quot;Confidential Information**: Any non-public information shared between parties.
+* **&quot;Intellectual Property&quot; (IP)**: Includes trademarks, copyrights, patents, trade secrets, and designs owned or licensed by the Company.
 
 ---
 

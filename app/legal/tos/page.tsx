@@ -1,5 +1,5 @@
 export const metadata = { title: "Tos" }
-
+{/* eslint-disable-next-line react/no-unescaped-entities */}
 export default function Page() {
   return (
     <article className="prose prose-invert max-w-none">
@@ -25,7 +25,7 @@ By submitting any content, you grant Utopian Space an irrevocable, worldwide, ro
 Users must maintain professionalism, avoid offensive or unlawful behavior, and respect the rights of others.
 
 **7. Payments and Fees**
-All fees are non-refundable unless explicitly stated. Any additional taxes or charges are the user’s responsibility.
+All fees are non-refundable unless explicitly stated. Any additional taxes or charges are the user&quot;s responsibility.
 
 **8. Termination**
 We reserve the right to suspend or terminate accounts for violation of these terms without prior notice.

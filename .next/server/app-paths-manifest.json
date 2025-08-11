@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/auth/signin/page": "app/auth/signin/page.js",
+  "/event/page": "app/event/page.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/about/page": "app/about/page.js",
+  "/blog/first-post/page": "app/blog/first-post/page.js",
+  "/academy/page": "app/academy/page.js",
+  "/animation/page": "app/animation/page.js",
+  "/esports/page": "app/esports/page.js",
+  "/event/[slug]/page": "app/event/[slug]/page.js",
+  "/label/page": "app/label/page.js",
+  "/legal/contributor-agreement/page": "app/legal/contributor-agreement/page.js",
+  "/legal/tos/page": "app/legal/tos/page.js",
+  "/legal/privacy/page": "app/legal/privacy/page.js",
+  "/publications/page": "app/publications/page.js",
+  "/recruitment/page": "app/recruitment/page.js",
+  "/dashboard/admin/page": "app/dashboard/admin/page.js",
+  "/dashboard/page": "app/dashboard/page.js"
+}

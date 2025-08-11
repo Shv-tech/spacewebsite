@@ -1,44 +1,70 @@
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-enum Role { STUDENT CREATOR EXPERT EDITOR ADMIN }
-enum EnrollStatus { ACTIVE CANCELLED COMPLETED }
-enum OrderStatus { SUCCESS FAILED PENDING }
+/**
+ * ── Enums (each value on its own line) ───────────────────────────
+ */
+enum Role {
+  STUDENT
+  CREATOR
+  EXPERT
+  EDITOR
+  ADMIN
+}
 
+enum EnrollStatus {
+  ACTIVE
+  CANCELLED
+  COMPLETED
+}
+
+enum OrderStatus {
+  SUCCESS
+  FAILED
+  PENDING
+}
+
+/**
+ * ── Models ───────────────────────────────────────────────────────
+ */
 model User {
-  id           String          @id @default(cuid())
-  name         String?
-  email        String          @unique
-  role         Role            @default(STUDENT)
-  image        String?
-  createdAt    DateTime        @default(now())
-  Enrollments  Enrollment[]
-  Orders       Order[]
-  Talent       TalentProfile?
-  Accounts     Account[]
-  Sessions     Session[]
+  id          String         @id @default(cuid())
+  name        String?
+  email       String         @unique
+  role        Role           @default(STUDENT)
+  image       String?
+  createdAt   DateTime       @default(now())
+  Enrollments Enrollment[]
+  Orders      Order[]
+  Talent      TalentProfile?
+  Accounts    Account[]
+  Sessions    Session[]
+  Course      Course[]
+  Referral    Referral[]
 }
 
 model Account {
-  id                String   @id @default(cuid())
+  id                String  @id @default(cuid())
   userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String?  @db.Text
-  access_token      String?  @db.Text
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?  @db.Text
+  id_token          String? @db.Text
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([provider, providerAccountId])
 }
 
@@ -59,36 +85,36 @@ model VerificationToken {
 }
 
 model Course {
-  id            String        @id @default(cuid())
-  title         String
-  slug          String        @unique
-  summary       String
-  description   String
-  priceINR      Int
-  priceUSD      Int?
-  level         String
-  language      String        @default("en")
-  isLive        Boolean       @default(false)
-  trailerUrl    String?
-  coverUrl      String?
-  syllabus      Json
-  startAt       DateTime?
-  endAt         DateTime?
-  instructor    User          @relation(fields: [instructorId], references: [id])
-  instructorId  String
-  sessions      LiveSession[]
-  enrollments   Enrollment[]
-  published     Boolean       @default(false)
+  id           String        @id @default(cuid())
+  title        String
+  slug         String        @unique
+  summary      String
+  description  String
+  priceINR     Int
+  priceUSD     Int?
+  level        String
+  language     String        @default("en")
+  isLive       Boolean       @default(false)
+  trailerUrl   String?
+  coverUrl     String?
+  syllabus     Json
+  startAt      DateTime?
+  endAt        DateTime?
+  instructor   User          @relation(fields: [instructorId], references: [id])
+  instructorId String
+  sessions     LiveSession[]
+  enrollments  Enrollment[]
+  published    Boolean       @default(false)
 }
 
 model LiveSession {
-  id        String  @id @default(cuid())
+  id        String   @id @default(cuid())
   courseId  String
   startsAt  DateTime
   durationM Int
   zoomLink  String?
   replayUrl String?
-  Course    Course  @relation(fields: [courseId], references: [id])
+  Course    Course   @relation(fields: [courseId], references: [id])
 }
 
 model Enrollment {
@@ -104,37 +130,37 @@ model Enrollment {
 }
 
 model Book {
-  id          String       @id @default(cuid())
-  title       String
-  slug        String       @unique
-  blurb       String
-  coverUrl    String
-  sampleUrl   String?
-  priceINR    Int
-  priceUSD    Int?
-  published   Boolean      @default(false)
+  id           String        @id @default(cuid())
+  title        String
+  slug         String        @unique
+  blurb        String
+  coverUrl     String
+  sampleUrl    String?
+  priceINR     Int
+  priceUSD     Int?
+  published    Boolean       @default(false)
   contributors Contributor[]
 }
 
 model Contributor {
-  id      String @id @default(cuid())
-  name    String
-  email   String?
-  role    String
-  bookId  String
-  Book    Book   @relation(fields: [bookId], references: [id])
+  id     String  @id @default(cuid())
+  name   String
+  email  String?
+  role   String
+  bookId String
+  Book   Book    @relation(fields: [bookId], references: [id])
 }
 
 model Order {
-  id          String       @id @default(cuid())
-  userId      String
-  amountINR   Int
-  currency    String       @default("INR")
-  status      OrderStatus  @default(SUCCESS)
-  items       Json
-  provider    String       // e-mail | manual
-  createdAt   DateTime     @default(now())
-  User        User         @relation(fields: [userId], references: [id])
+  id        String      @id @default(cuid())
+  userId    String
+  amountINR Int
+  currency  String      @default("INR")
+  status    OrderStatus @default(SUCCESS)
+  items     Json
+  provider  String // e-mail | manual
+  createdAt DateTime    @default(now())
+  User      User        @relation(fields: [userId], references: [id])
 }
 
 model TalentProfile {
@@ -150,16 +176,16 @@ model TalentProfile {
 }
 
 model Event {
-  id        String   @id @default(cuid())
-  title     String
-  slug      String   @unique
-  startsAt  DateTime
-  coverUrl  String?
-  location  String?
-  virtual   Boolean  @default(true)
-  priceINR  Int      @default(0)
-  summary   String
-  content   String
+  id       String   @id @default(cuid())
+  title    String
+  slug     String   @unique
+  startsAt DateTime
+  coverUrl String?
+  location String?
+  virtual  Boolean  @default(true)
+  priceINR Int      @default(0)
+  summary  String
+  content  String
 }
 
 model Referral {

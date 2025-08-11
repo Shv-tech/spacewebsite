@@ -1,3 +1,9 @@
+type User = {
+  id: string;
+  email: string;
+  role: string;
+};
+
 import { HeroGradient } from "../components/hero-gradient"
 import Link from "next/link"
 import { DivisionCard } from "../components/division-card"

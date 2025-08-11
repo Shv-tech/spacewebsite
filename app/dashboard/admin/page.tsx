@@ -1,10 +1,20 @@
 import { prisma } from "../../../lib/db"
 
+type UserRow = {
+  id: string
+  email: string | null
+  role: string
+  createdAt: Date
+}
+
+
 export default async function AdminPage() {
-  const users = await prisma.user.findMany({
+  const users: UserRow[] = await prisma.user.findMany({
+    select: { id: true, email: true, role: true, createdAt: true },
     take: 20,
-    orderBy: { createdAt: "desc" }
+    orderBy: { createdAt: "desc" },
   })
+
   return (
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">Admin — Users</h1>
@@ -18,7 +28,7 @@ export default async function AdminPage() {
             </tr>
           </thead>
           <tbody>
-            {users.map(u => (
+            {users.map((u: UserRow) => (
               <tr key={u.id} className="border-b border-white/5">
                 <td className="py-2">{u.email}</td>
                 <td>{u.role}</td>

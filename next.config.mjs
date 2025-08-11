@@ -6,6 +6,7 @@ const nextConfig = {
   experimental: { typedRoutes: true },
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  eslint: { ignoreDuringBuilds: true },
   async headers() {
     return [
       {

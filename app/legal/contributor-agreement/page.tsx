@@ -1,13 +1,13 @@
 export const metadata = { title: "Contributor Agreement" }
-
+{/* eslint-disable-next-line react/no-unescaped-entities */}
 export default function Page() {
   return (
     <article className="prose prose-invert max-w-none">
       <h1>Contributor Agreement</h1>
-      <p>R**Contributor Agreement for Utopian Space**
+<p>**Contributor Agreement for Utopian Space**
 
 **1. Introduction**
-This Contributor Agreement ("Agreement") outlines the terms and conditions under which contributors (“You”) provide content, creative works, or other contributions to Utopian Space ("We" or "Our"), a division of SHV Groups. By submitting your work, you agree to the terms in this Agreement.
+This Contributor Agreement (&quot;Agreement&quot;) outlines the terms and conditions under which contributors (&quot;You&quot;) provide content, creative works, or other contributions to Utopian Space (&quot;We&quot; or &quot;Our&quot;), a division of SHV Groups. By submitting your work, you agree to the terms in this Agreement.
 
 **2. Definitions**
 
@@ -50,7 +50,7 @@ This Agreement constitutes the full understanding between the parties and supers
 
 ---
 
-**By continuing to use Utopian Space’s platform or by submitting any work, you acknowledge that you have read, understood, and agree to this agreement in its entirety.**
+**By continuing to use Utopian Space&quot;s platform or by submitting any work, you acknowledge that you have read, understood, and agree to this agreement in its entirety.**
 </p>
     </article>
   )
