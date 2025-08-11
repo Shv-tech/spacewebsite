@@ -1,1 +1,62 @@
-node_modules
+# --- Node / package managers ---
+node_modules/
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# --- Next.js / build artifacts ---
+.next/
+.next/cache/
+out/
+dist/
+.vercel/
+
+# --- TypeScript / tooling caches ---
+*.tsbuildinfo
+.eslintcache
+stylelintcache
+
+# --- Coverage / testing ---
+coverage/
+.nyc_output/
+.v8/
+
+# --- Environment files (keep example tracked) ---
+.env
+.env.*
+!.env.example
+prisma/.env
+
+# --- Prisma ---
+.prisma/                 # generated client cache
+# keep schema and migrations in Git:
+!prisma/schema.prisma
+!prisma/migrations/**/*
+# if you ever use SQLite locally:
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# --- OS / Editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# --- Misc ---
+*.swp
+*.swo
+*.tmp
+*.lock-wscript
+*.tgz
+*.zip
+*.pem
+*.key
+*.crt
