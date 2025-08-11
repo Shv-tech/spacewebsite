@@ -4,21 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev --name init",
     "db:seed": "prisma db seed",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "latest",
-    "@mdx-js/react": "^3.1.0",
-    "@next-auth/prisma-adapter": "^1.0.7",
-    "@next/mdx": "latest",
-    "@prisma/client": "latest",
+    "@mdx-js/react": "3.0.1",
+    "@next-auth/prisma-adapter": "1.0.7",
+    "@next/mdx": "14.2.3",
     "@radix-ui/react-avatar": "latest",
     "@radix-ui/react-dropdown-menu": "latest",
     "@radix-ui/react-label": "latest",
@@ -33,40 +33,32 @@
     "date-fns": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",
-    "next": "^14.2.31",
-    "next-auth": "^4.24.7",
+    "next": "14.2.31",
+    "next-auth": "4.24.11",
     "next-plausible": "latest",
     "next-themes": "latest",
-    "prisma": "latest",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "latest",
-    "remark-gfm": "^4.0.1",
+    "remark-gfm": "4.0.0",
     "resend": "latest",
     "tailwind-merge": "latest",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "latest"
+    "zod": "latest",
+    "@prisma/client": "6.13.0"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^3.1.0",
-    "@tailwindcss/postcss": "^4.1.11",
+    "@mdx-js/loader": "3.0.1",
+    "@tailwindcss/postcss": "4.0.0",
     "@types/node": "20.12.12",
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.22",
     "autoprefixer": "latest",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.31",
-    "postcss": "latest",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.31",
+    "postcss": "8.4.41",
     "prettier": "latest",
-    "tailwindcss": "latest",
-    "typescript": "5.5.4"
-  },
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "tailwindcss": "4.0.0",
+    "typescript": "5.5.4",
+    "prisma": "6.13.0"
+  }
 }
